@@ -5,6 +5,15 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
-}
+	pathPrefix: "/hello-world",
+	/* Your site config here */
+	plugins: [
+		'gatsby-plugin-styled-components',
+		{
+			resolve: 'gatsby-plugin-layout',
+			options: {
+				component: require.resolve('./src/Layout/Main'),
+			},
+		},
+	],
+};

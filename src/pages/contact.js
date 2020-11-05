@@ -11,10 +11,8 @@ import { Button } from '../components/Atoms/Button';
 import { FormIcon } from '../components/fontawesome';
 
 export default function Contact() {
-
 	// const [color, setColor] = useState();
 	// const [message, setMessage] = useState('');
-	// const [{ name, email, subject, message }] = useState("")
 	//
 	// const onClickHandler = e => {
 	// 	setColor();
@@ -49,7 +47,6 @@ export default function Contact() {
 						onSubmit={() => {
 							console.log('i am clicked');
 						}}
-						// align="center"
 					>
 						<InputField
 							placeholder="Full Name"
@@ -60,7 +57,7 @@ export default function Contact() {
 						<InputField
 							placeholder="Email Address"
 							type="email"
-							pattern=".+@globex.com"
+							pattern="+@globex.com"
 							size="30"
 							required
 						/>
@@ -71,11 +68,12 @@ export default function Contact() {
 						/>
 						<TextField
 							placeholder="Your Message"
+							required
 						/>
 						<Space small />
 						<Button
 							color="green"
-							form="form"
+							size="smallest"
 							type="submit"
 						>
 							Send Message
