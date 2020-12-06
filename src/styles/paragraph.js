@@ -16,7 +16,7 @@ const smallParagraph = css`
   	font-size: 18px;
 	line-height: 30px;
 	margin-bottom: 40px;
- `;
+`;
 
 export const Paragraph = styled.p`
 	font-size: 24px;
@@ -82,6 +82,7 @@ export const DropdownItem = styled.h4`
 	margin: 20px 5px 10px 10px;
 	position: relative;
 	display: inline-block;
+	color: white;
 	
   	:before{
 		content: "";
@@ -101,4 +102,3 @@ export const DropdownItem = styled.h4`
 	  
   }
 `;
-

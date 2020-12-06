@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
-import { HeaderWrapper, Flex } from './wrappers';
-import { DropdownItem, NavigationLinkTitle } from './paragraph';
-import { Button } from './Atoms/Button';
-import { Arrow } from './fontawesome';
-import { ArrowUp, B } from './helpers';
+import { HeaderWrapper } from '../../styles/wrappers';
+import { Flex } from '../Atoms/Flex-Grid';
+import { DropdownItem, NavigationLinkTitle } from '../../styles/paragraph';
+import { Button } from '../Atoms/Button';
+import { Arrow } from '../../styles/fontawesome';
+import { ArrowUp, B } from '../../styles/helpers';
 
 export default function Header() {
 	return (
