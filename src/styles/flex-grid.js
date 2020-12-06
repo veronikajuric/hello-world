@@ -8,4 +8,9 @@ export const flex = css`
 	${props => props.direction && `flex-direction: ${props.direction}`};
 `;
 
+export const grid = css`
+	display: grid;
+	gap: 30px 80px;
+	grid-template-columns: 50% calc(50% + 10px);
+`;
 

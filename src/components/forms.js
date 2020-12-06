@@ -28,9 +28,17 @@ export const InputField = styled.input`
 	}
 `;
 
+export const ErrorEmpty = styled.span`
+	color: rgb(255, 153, 153);
+	padding: 1px 15px;
+	font-size: 13px;
+	margin-top: -15px;
+	margin-bottom: 5px;
+`;
+
 export const TextField = styled.textarea`
 	padding: 11px 15px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	max-width: 450px;
 	box-sizing: border-box;
 	border: 1px solid lightgray;

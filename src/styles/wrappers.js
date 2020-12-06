@@ -1,17 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-const flex = css`
-	display: flex;
-	${props => props.justify && `justify-content: ${props.justify}`};
-	${props => props.align && `align-items: ${props.align}`};
-	${props => props.direction && `flex-direction: ${props.direction}`};
-`;
-
-
-export const Flex = styled.div`
-	${flex};
-`;
+import { flex } from './flex-grid';
 
 export const FormWrapper = styled.form`
 	${flex};
@@ -36,10 +26,6 @@ export const HeroContentWrapper = styled.div`
 `;
 
 // Specific Wrappers
-export const ServicesMainWrapper = styled.div`
-	${flex}
-	margin-top: 50px;
-`;
 
 export const ServiceContentWrapper = styled.div`
 	box-sizing: border-box;
@@ -69,19 +55,6 @@ export const ImageWrapService = styled.div`
 		width: 116px;
 		height: 100px;
 	}
-`;
-
-export const BulletsWrapper = styled.div`
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin: 40px auto 60px auto; 
-`;
-
-export const BulletsContainer = styled.div`
-	display: grid;
-	gap: 30px 80px;
-	grid-template-columns: 50% calc(50% + 10px);
 `;
 
 export const HeaderWrapper = styled.div`

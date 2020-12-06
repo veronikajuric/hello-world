@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, {
+	ChangeEvent, FormEvent, useState,
+} from 'react';
 import { faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import {
-	Flex, SectionWrapper, FormWrapper,
-} from '../components/wrappers';
-import { Paragraph } from '../components/paragraph';
-import { Title } from '../components/headings';
-import { HorizontalDevider, Space, B } from '../components/helpers';
-import { InputField, TextField, FormText } from '../components/forms';
+	SectionWrapper, FormWrapper,
+} from '../styles/wrappers';
+import { Flex } from '../components/Atoms/Flex-Grid';
+import { Paragraph } from '../styles/paragraph';
+import { Title } from '../styles/headings';
+import { HorizontalDevider, Space, B } from '../styles/helpers';
+import {
+	InputField, TextField, FormText, ErrorEmpty,
+} from '../components/forms';
 import { Button } from '../components/Atoms/Button';
-import { FormIcon } from '../components/fontawesome';
+import { FormIcon } from '../styles/fontawesome';
 
 export default function Contact() {
 	// const [color, setColor] = useState();
@@ -19,12 +24,59 @@ export default function Contact() {
 	// };
 	//
 	//
+//
+// export interface ISentDate {
+// 	name: string;
+// }
+//
+// export interface ISentResult {
+// 	success =  boolean;
+// 	message =  string;
+//
+// }
+//
+// interface IProps {
+// 	onSent =  (data: ISentData) => ISentResult;
+// }
+
+	const [name, setName] = useState('');
+	const [nameError, setNameError] = useState('');
+
+	const handleNameChange = event => {
+		const target = event.target;
+		const name = target.name;
+		let error = '';
+		setName(e.currentTarget.value);
+		// validateName(e.currentTarget.value);
+		if (!target.value) {
+			error = `${name} field cannot be empty`;
+		}
+	};
+	//
+	// const validateName = (value: string) : string => {
+	// 	const error = value ? '' : 'You must enter your first name';
+	// 	setNameError(error);
+	//
+	// 	return error;
+	// };
+
+	// const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+	// 	e.preventDefault();
+	// 	const nameValidationError = validateName(name);
+	// 	if (nameValidationError === "") {
+	// 		const result = props.onSent({
+	// 			name
+	// 		});
+	// 		// TODO - set state to indicate form is submitted
+	// 		// TODO - set state to flag whether the form submission was successful with any errors
+	// 	}
+	// };
 
 	return (
 		<>
 			<SectionWrapper
 				direction="column"
-				align="cente r"
+				align="center"
 			>
 				<Title>
 					Contact us
@@ -52,8 +104,14 @@ export default function Contact() {
 							placeholder="Full Name"
 							required
 							type="text"
+							value={name}
+							onChange={handleNameChange}
 
 						/>
+						<ErrorEmpty>
+							{}
+						</ErrorEmpty>
+
 						<InputField
 							placeholder="Email Address"
 							type="email"
@@ -61,15 +119,24 @@ export default function Contact() {
 							size="30"
 							required
 						/>
+						<ErrorEmpty>
+							Required field
+						</ErrorEmpty>
 						<InputField
 							placeholder="Subject"
 							type="text"
 							required
 						/>
+						<ErrorEmpty>
+							Required field
+						</ErrorEmpty>
 						<TextField
 							placeholder="Your Message"
 							required
 						/>
+						<ErrorEmpty>
+							Required field
+						</ErrorEmpty>
 						<Space small />
 						<Button
 							color="green"

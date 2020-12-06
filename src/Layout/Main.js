@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from '../components/header';
-
+import Header from '../components/Organisms/Header/Header';
 import { GlobalStyle } from '../components/Atoms/GlobalStyle';
-import { Space } from '../components/helpers'
+import { Space } from '../styles/helpers';
 
 const Main = (props) => {
 	const { children } = props;
@@ -10,13 +9,8 @@ const Main = (props) => {
 		<>
 			<GlobalStyle />
 			<Header />
-			<Space/>
+			<Space />
 			{children}
-			{/* <Header links={navLinks.headerLinks} /> */}
-			{/* <BaseWrapper> */}
-			{/*	{children} */}
-			{/* </BaseWrapper> */}
-			{/* <Footer links={navLinks.footerLinks} /> */}
 		</>
 	);
 };
